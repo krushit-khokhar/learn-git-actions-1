@@ -1,0 +1,13 @@
+name: Create a comment new issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "dump github context"
+        run : echo '${{toJSON(github.enent)}}'|jq
+        shell: bash
